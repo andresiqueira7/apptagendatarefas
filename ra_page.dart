@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class RaPage extends StatelessWidget {
-  @override
+  //Crio a classe da pagina de RA;
+  @override //interface
   Widget build(BuildContext context) {
     return Scaffold(
+      //estrutura básica da tela, com appBar e body.
       appBar: AppBar(title: Text('Perfil')),
 
       body: Column(
+        //coluna que vai conter o card do RA e outras informações
         children: [
-          // 🔥 CARD BONITO (NOME + RA)
+          // RA CARD
           Container(
             margin: EdgeInsets.all(16),
             padding: EdgeInsets.all(16),
@@ -17,7 +20,7 @@ class RaPage extends StatelessWidget {
                 colors: [Colors.deepPurple, Colors.blueAccent],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-              ),
+              ), // aqui crio um gradiente de cor para o card do RA.
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
@@ -29,6 +32,7 @@ class RaPage extends StatelessWidget {
             ),
 
             child: Row(
+              // aqui crio uma linha para colocar as informações do RA.
               children: [
                 CircleAvatar(
                   radius: 30,
@@ -39,6 +43,7 @@ class RaPage extends StatelessWidget {
                 SizedBox(width: 16),
 
                 Column(
+                  // aqui crio uma coluna para colocar o nome e o RA do usuário.
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -61,8 +66,6 @@ class RaPage extends StatelessWidget {
               ],
             ),
           ),
-
-          // 👇 espaço pra você adicionar mais coisas depois
         ],
       ),
     );

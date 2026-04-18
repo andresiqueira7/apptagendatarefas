@@ -3,31 +3,36 @@ import 'pages/calendar_page.dart';
 import 'pages/ra_page.dart';
 
 class HomePage extends StatelessWidget {
-  // 🔥 AQUI fica TODAS as tarefas do app
+  //  AQUI ficam TODAS as tarefas do app
   final Map<String, List<Map<String, dynamic>>> tarefasPorData = {};
 
   @override
   Widget build(BuildContext context) {
+    // aqui construo a interface do home page, que tem um fundo, um título, um subtítulo e dois cards para acessar o calendário e o RA.
     return Scaffold(
       body: Container(
         // Fundo bonito
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple, Colors.blueAccent],
+            colors: [Colors.deepPurple, Colors.blueAccent], //
             begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            end: Alignment
+                .bottomRight, // aqui crio um gradiente de cor para o fundo.
           ),
         ),
 
         child: SafeArea(
+          // aqui uso o SafeArea para evitar que os elementos fiquem embaixo da barra
           child: Padding(
             padding: EdgeInsets.all(20),
 
             child: Column(
+              // aqui crio a coluna que vai conter a mensagem inicial.
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // TÍTULO
                 Text(
+                  //
                   'Bem-vindo 👋',
                   style: TextStyle(
                     fontSize: 28,
@@ -51,6 +56,7 @@ class HomePage extends StatelessWidget {
                     children: [
                       // 📅 CALENDÁRIO
                       buildCard(
+                        // aqui chamo a função para criar o card do calendário, passando o título, a cor e a página do calendário, que recebe o map de tarefas por data para mostrar os dias com tarefas.
                         context,
                         title: '📅 Acessar Calendário',
                         color: Colors.purpleAccent,
@@ -63,6 +69,7 @@ class HomePage extends StatelessWidget {
 
                       // 👤 SOBRE / RA
                       buildCard(
+                        // aqui chamo a função para criar o card do RA, passando o título, a cor e a página do RA, que é uma página simples com informações do aluno.
                         context,
                         title: '👤 ALUNO E RA',
                         color: Colors.greenAccent,
@@ -81,6 +88,7 @@ class HomePage extends StatelessWidget {
 
   // FUNÇÃO PARA CRIAR CARDS
   Widget buildCard(
+    // aqui crio uma função para criar os cards do home page, que recebe o contexto, o título, a cor e a página para navegar quando clicar.
     BuildContext context, {
     required String title,
     required Color color,
@@ -92,6 +100,7 @@ class HomePage extends StatelessWidget {
       },
 
       child: Container(
+        // aqui crio o container do card
         width: double.infinity,
         padding: EdgeInsets.all(25),
 
@@ -101,6 +110,7 @@ class HomePage extends StatelessWidget {
         ),
 
         child: Text(
+          //card
           title,
           style: TextStyle(
             fontSize: 20,

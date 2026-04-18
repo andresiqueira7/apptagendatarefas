@@ -3,12 +3,14 @@ import 'package:projeto1/home_page.dart';
 
 // StatelessWidget = tela que não muda dinamicamente
 class LoginPage extends StatelessWidget {
+  // aqui crio a classe do login, que é um StatelessWidget porque a tela não muda dinamicamente, só tem os campos de email e senha e o botão de login.
   // Controllers capturam o que o usuário digita
   final TextEditingController emailController = TextEditingController();
   final TextEditingController senhaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    // aqui é onde construo a interface do login, que tem um fundo com gradiente, um container centralizado com os campos de email e senha e o botão de login.
     return Scaffold(
       // estrutura da tela
       body: Container(
@@ -27,6 +29,7 @@ class LoginPage extends StatelessWidget {
         child: Center(
           // Centraliza o conteúdo na tela
           child: Container(
+            // aqui crio o container que vai conter os campos de email e senha e o botão de login
             padding: EdgeInsets.all(30), // espaço interno
             margin: EdgeInsets.all(20), // espaço externo
 
@@ -40,7 +43,7 @@ class LoginPage extends StatelessWidget {
               children: [
                 // TÍTULO
                 Text(
-                  'LOGIN\nAGENDA DE TAREFAS',
+                  'LOGIN\nAGENDA DE TAREFAS', // aqui crio o título do login, que tem o nome do app e um subtítulo.
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
 
@@ -90,6 +93,7 @@ class LoginPage extends StatelessWidget {
   }
 
   ElevatedButton newMethod(BuildContext context) {
+    //aqui crio o botão de login
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.purpleAccent,
@@ -97,9 +101,9 @@ class LoginPage extends StatelessWidget {
       ),
 
       onPressed: () {
-        // Aqui você poderia validar login (depois podemos melhorar)
+        // validar login
 
-        // Navega para a Home
+        // ir para inicio
         Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
       },
 
