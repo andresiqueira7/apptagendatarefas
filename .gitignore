@@ -1,0 +1,8 @@
+# Ignora tudo
+*
+
+# Permite navegar pelas pastas
+!*/
+
+# Permite apenas arquivos Dart
+!*.dart
